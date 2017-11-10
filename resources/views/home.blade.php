@@ -274,7 +274,7 @@
         <p>We are happy to talk to you!</p>
         @include('inc.errors')
         <div id="message"></div>
-        {!! Form::open(['url'=>'/message']) !!}
+        {!! Form::open(['url'=>'/sendquery']) !!}
           <input name="name" id="name" type="text" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" placeholder="Your name..." >
           <input name="email" id="email" type="email" class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 noMarr" placeholder="Email Address..." >
           <textarea name="message" id="comments" cols="" rows="" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" placeholder="Project Details..."></textarea>

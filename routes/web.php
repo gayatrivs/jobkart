@@ -49,14 +49,18 @@ Route::get('/delete/{id}/','JobsController@delete')->name('deletejob');
 
 //Password resets jobseeker
 Route::post('/jobseeker/password/email','Auth\JobSeekerForgotPasswordController@sendResetLinkEmail')->name('jobseeker.password.email');
-Route::get('/jobseeker/password/reset','Auth\JobSeekerForgotPasswordController@showLinkRequestForm')->name('jobseeker.password.request');
-Route::post('/jobseeker/password/reset','Auth\JobSeekerResetPasswordController@reset');
-Route::get('/jobseeker/password/reset/{token}','Auth\JobSeekerResetPasswordController@showResetForm')->name('jobseeker.password.reset');
+Route::get('/jobseekerpasswordreset','Auth\JobSeekerForgotPasswordController@showLinkRequestForm')->name('jobseeker.password.request');
+Route::post('/jobseekerpasswordreset','Auth\JobSeekerResetPasswordController@reset');
+Route::get('/jobseekerpasswordreset{token}','Auth\JobSeekerResetPasswordController@showResetForm')->name('jobseeker.password.reset');
 
 
 
 //password resets job provider
 Route::post('/jobprovider/password/email','Auth\JobProviderForgotPasswordController@sendResetLinkEmail')->name('jobprovider.password.email');
-Route::get('/jobprovider/password/reset','Auth\JobProviderForgotPasswordController@showLinkRequestForm')->name('jobprovider.password.request');
-Route::post('/jobprovider/password/reset','Auth\JobProviderResetPasswordController@reset');
-Route::get('/jobprovider/password/reset/{token}','Auth\JobProviderResetPasswordController@showResetForm')->name('jobprovider.password.reset');
+Route::get('/jobproviderpasswordreset','Auth\JobProviderForgotPasswordController@showLinkRequestForm')->name('jobprovider.password.request');
+Route::post('/jobproviderpasswordreset','Auth\JobProviderResetPasswordController@reset');
+Route::get('/jobproviderpasswordreset{token}','Auth\JobProviderResetPasswordController@showResetForm')->name('jobprovider.password.reset');
+
+
+//message
+Route::post('/sendquery','MessagesController@submit');

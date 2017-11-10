@@ -41,10 +41,17 @@ class JobProviderResetPasswordController extends Controller
     }
 
     protected function guard(){
-        return Auth::guard('jobseeker');
+        return Auth::guard('jobprovider');
     }
 
     protected function broker(){
         return Password::broker('jobproviders');
+    }
+
+    public function showResetForm(Request $request, $token = null)
+    {
+        return view('auth.passwords.reset-jobprovider')->with(
+            ['token' => $token, 'email' => $request->email]
+        );
     }
 }

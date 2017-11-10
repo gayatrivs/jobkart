@@ -32,7 +32,7 @@ class JobSeekerForgotPasswordController extends Controller
     }
 
     protected function broker(){
-        return Password::broker('jobproviders');
+        return Password::broker('jobseekers');
     }
 
      public function showLinkRequestForm()
