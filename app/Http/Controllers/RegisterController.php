@@ -46,7 +46,7 @@ class RegisterController extends Controller
     	$jobseeker->save();
 
     	//redirect to home
-    	return redirect('/');
+    	return redirect('/')->with('message','Registration successful!');
     }
 
     public function register_job_provider(Request $request){
@@ -65,7 +65,7 @@ class RegisterController extends Controller
     	$jobprovider->save();
 
     	//redirect to home
-    	return redirect('/');
+    	return redirect('/')->with('message','Registration successful!');
     }
 
 }
